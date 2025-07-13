@@ -91,12 +91,70 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Show success message (in a real application, you would send this to a server)
-            alert('Thank you for your message! We will get back to you soon.');
+            // Option 1: EmailJS Integration (Recommended for static sites)
+            sendEmailViaEmailJS(firstName, lastName, email, company, message);
             
-            // Reset form
-            this.reset();
+            // Option 2: Mailto fallback (uncomment if EmailJS is not set up)
+            // sendEmailViaMailto(firstName, lastName, email, company, message);
         });
+    }
+    
+    // EmailJS Integration Function
+    function sendEmailViaEmailJS(firstName, lastName, email, company, message) {
+        // You'll need to sign up at https://www.emailjs.com/ and get your keys
+        const serviceID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+        const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+        const userID = 'YOUR_USER_ID'; // Replace with your EmailJS user ID
+        
+        const templateParams = {
+            from_name: `${firstName} ${lastName}`,
+            from_email: email,
+            company: company || 'Not specified',
+            message: message,
+            to_email: 'srinivas@hiramyatech.com'
+        };
+        
+        // Show loading state
+        const submitButton = document.querySelector('#contact-form button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
+        emailjs.send(serviceID, templateID, templateParams, userID)
+            .then(function(response) {
+                alert('Thank you for your message! We will get back to you soon.');
+                document.getElementById('contact-form').reset();
+            })
+            .catch(function(error) {
+                alert('Sorry, there was an error sending your message. Please try again or contact us directly at srinivas@hiramyatech.com');
+                console.error('EmailJS error:', error);
+            })
+            .finally(function() {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            });
+    }
+    
+    // Mailto Fallback Function
+    function sendEmailViaMailto(firstName, lastName, email, company, message) {
+        const subject = `Contact Form Submission from ${firstName} ${lastName}`;
+        const body = `
+Name: ${firstName} ${lastName}
+Email: ${email}
+Company: ${company || 'Not specified'}
+
+Message:
+${message}
+        `.trim();
+        
+        const mailtoLink = `mailto:srinivas@hiramyatech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoLink;
+        
+        // Show success message after a brief delay
+        setTimeout(() => {
+            alert('Your email client should have opened. If not, please send your message directly to srinivas@hiramyatech.com');
+            document.getElementById('contact-form').reset();
+        }, 1000);
     }
     
     // Smooth scrolling for anchor links (if any are added later)
