@@ -1,13 +1,475 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cloud Platform Architecture &amp; DevOps Services Website</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudTech Solutions - Cloud Platform Architecture & DevOps Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.344.0/lucide.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-gradient-to-br from-blue-600 to-teal-600 p-2 rounded-lg">
+                            <i data-lucide="cloud" class="h-6 w-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-900">CloudTech Solutions</h1>
+                            <p class="text-xs text-gray-500">Cloud Architecture & DevOps Excellence</p>
+                        </div>
+                    </div>
+                    
+                    <nav class="hidden md:flex space-x-1">
+                        <button class="nav-tab flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-blue-100 text-blue-700" data-tab="about">
+                            <i data-lucide="users" class="h-4 w-4"></i>
+                            <span>About Us</span>
+                        </button>
+                        <button class="nav-tab flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100" data-tab="services">
+                            <i data-lucide="settings" class="h-4 w-4"></i>
+                            <span>Services</span>
+                        </button>
+                        <button class="nav-tab flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100" data-tab="technologies">
+                            <i data-lucide="cpu" class="h-4 w-4"></i>
+                            <span>Technologies</span>
+                        </button>
+                        <button class="nav-tab flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100" data-tab="contact">
+                            <i data-lucide="mail" class="h-4 w-4"></i>
+                            <span>Contact Us</span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation -->
+        <div class="md:hidden bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex space-x-1 py-2 overflow-x-auto">
+                    <button class="mobile-nav-tab flex items-center space-x-2 px-3 py-2 rounded-lg font-medium whitespace-nowrap transition-all duration-200 bg-blue-100 text-blue-700" data-tab="about">
+                        <i data-lucide="users" class="h-4 w-4"></i>
+                        <span class="text-sm">About Us</span>
+                    </button>
+                    <button class="mobile-nav-tab flex items-center space-x-2 px-3 py-2 rounded-lg font-medium whitespace-nowrap transition-all duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100" data-tab="services">
+                        <i data-lucide="settings" class="h-4 w-4"></i>
+                        <span class="text-sm">Services</span>
+                    </button>
+                    <button class="mobile-nav-tab flex items-center space-x-2 px-3 py-2 rounded-lg font-medium whitespace-nowrap transition-all duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100" data-tab="technologies">
+                        <i data-lucide="cpu" class="h-4 w-4"></i>
+                        <span class="text-sm">Technologies</span>
+                    </button>
+                    <button class="mobile-nav-tab flex items-center space-x-2 px-3 py-2 rounded-lg font-medium whitespace-nowrap transition-all duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100" data-tab="contact">
+                        <i data-lucide="mail" class="h-4 w-4"></i>
+                        <span class="text-sm">Contact Us</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- About Section -->
+            <div id="about-content" class="tab-content space-y-8">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">About CloudTech Solutions</h2>
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        Based in the vibrant tech hub of Bangalore, we are a leading cloud platform architecture and DevOps engineering company 
+                        dedicated to transforming businesses through innovative cloud solutions.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            We empower organizations to leverage the full potential of cloud computing through expert architecture design, 
+                            robust DevOps practices, and cutting-edge engineering solutions. Our team of certified professionals brings 
+                            years of experience in building scalable, secure, and cost-effective cloud infrastructures.
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i data-lucide="globe" class="h-6 w-6 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Global Reach</h4>
+                                <p class="text-gray-600">Serving clients worldwide from our Bangalore headquarters</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-teal-50 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Why Choose Us?</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="shield" class="h-5 w-5 text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Expert Team</h4>
+                                    <p class="text-gray-600 text-sm">Certified cloud architects and DevOps engineers</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="zap" class="h-5 w-5 text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Proven Track Record</h4>
+                                    <p class="text-gray-600 text-sm">100+ successful cloud migrations and implementations</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="lock" class="h-5 w-5 text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Security First</h4>
+                                    <p class="text-gray-600 text-sm">Enterprise-grade security and compliance standards</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div id="services-content" class="tab-content space-y-8 hidden">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Our Services</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Comprehensive cloud and DevOps solutions tailored to accelerate your digital transformation journey
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                        <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-3 rounded-lg w-fit mb-4">
+                            <i data-lucide="cloud" class="h-6 w-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Cloud Architecture</h3>
+                        <p class="text-gray-600 leading-relaxed">Design and implement scalable, secure cloud infrastructure on AWS, Azure, and Google Cloud Platform.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                        <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-3 rounded-lg w-fit mb-4">
+                            <i data-lucide="git-branch" class="h-6 w-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">DevOps Engineering</h3>
+                        <p class="text-gray-600 leading-relaxed">Streamline development workflows with CI/CD pipelines, automation, and infrastructure as code.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                        <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-3 rounded-lg w-fit mb-4">
+                            <i data-lucide="shield" class="h-6 w-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Security & Compliance</h3>
+                        <p class="text-gray-600 leading-relaxed">Implement robust security measures and ensure compliance with industry standards and regulations.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                        <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-3 rounded-lg w-fit mb-4">
+                            <i data-lucide="monitor" class="h-6 w-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Monitoring & Analytics</h3>
+                        <p class="text-gray-600 leading-relaxed">Set up comprehensive monitoring, logging, and analytics solutions for optimal performance insights.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                        <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-3 rounded-lg w-fit mb-4">
+                            <i data-lucide="server" class="h-6 w-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Infrastructure Management</h3>
+                        <p class="text-gray-600 leading-relaxed">Manage and optimize your infrastructure for cost-effectiveness, performance, and reliability.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                        <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-3 rounded-lg w-fit mb-4">
+                            <i data-lucide="zap" class="h-6 w-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Performance Optimization</h3>
+                        <p class="text-gray-600 leading-relaxed">Enhance application performance through load balancing, caching, and resource optimization.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-blue-600 to-teal-600 p-8 rounded-2xl text-white text-center">
+                    <h3 class="text-2xl font-bold mb-4">Ready to Transform Your Infrastructure?</h3>
+                    <p class="text-blue-100 mb-6">Let's discuss how we can help you achieve your cloud goals</p>
+                    <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
+                        Get Started Today
+                    </button>
+                </div>
+            </div>
+
+            <!-- Technologies Section -->
+            <div id="technologies-content" class="tab-content space-y-8 hidden">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Technologies We Master</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        We work with cutting-edge technologies and industry-leading platforms to deliver robust, scalable solutions
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-2 rounded-lg mr-3">
+                                <i data-lucide="cloud" class="h-5 w-5 text-blue-600"></i>
+                            </div>
+                            Cloud Platforms
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">AWS</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Microsoft Azure</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Google Cloud Platform</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">DigitalOcean</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-2 rounded-lg mr-3">
+                                <i data-lucide="git-branch" class="h-5 w-5 text-blue-600"></i>
+                            </div>
+                            DevOps Tools
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Docker</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Kubernetes</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Jenkins</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">GitLab CI/CD</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">GitHub Actions</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-2 rounded-lg mr-3">
+                                <i data-lucide="layers" class="h-5 w-5 text-blue-600"></i>
+                            </div>
+                            Infrastructure as Code
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Terraform</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">CloudFormation</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Ansible</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Pulumi</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-2 rounded-lg mr-3">
+                                <i data-lucide="monitor" class="h-5 w-5 text-blue-600"></i>
+                            </div>
+                            Monitoring & Logging
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Prometheus</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Grafana</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">ELK Stack</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Datadog</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">New Relic</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-2 rounded-lg mr-3">
+                                <i data-lucide="database" class="h-5 w-5 text-blue-600"></i>
+                            </div>
+                            Databases
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">PostgreSQL</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">MySQL</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">MongoDB</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Redis</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">Amazon RDS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <div class="bg-gradient-to-br from-blue-100 to-teal-100 p-2 rounded-lg mr-3">
+                                <i data-lucide="shield" class="h-5 w-5 text-blue-600"></i>
+                            </div>
+                            Security Tools
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">HashiCorp Vault</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">AWS IAM</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">OWASP ZAP</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200">SonarQube</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Always Learning, Always Evolving</h3>
+                        <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                            The technology landscape evolves rapidly, and so do we. Our team continuously updates their skills 
+                            and certifications to stay ahead of the curve and bring you the latest innovations in cloud computing and DevOps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="contact-content" class="tab-content space-y-8 hidden">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Ready to embark on your cloud transformation journey? Let's discuss how we can help you achieve your goals.
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-100 p-3 rounded-lg">
+                                    <i data-lucide="map-pin" class="h-6 w-6 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Office Address</h4>
+                                    <p class="text-gray-600">
+                                        CloudTech Solutions Pvt. Ltd.<br>
+                                        #42, 3rd Floor, Brigade Road<br>
+                                        Bangalore, Karnataka 560025<br>
+                                        India
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-100 p-3 rounded-lg">
+                                    <i data-lucide="phone" class="h-6 w-6 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">+91 80 4567 8901</p>
+                                    <p class="text-gray-600">+91 80 4567 8902</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-100 p-3 rounded-lg">
+                                    <i data-lucide="mail" class="h-6 w-6 text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@cloudtechsolutions.in</p>
+                                    <p class="text-gray-600">sales@cloudtechsolutions.in</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-blue-50 to-teal-50 p-6 rounded-xl">
+                            <h4 class="font-semibold text-gray-800 mb-3">Business Hours</h4>
+                            <div class="space-y-2 text-gray-600">
+                                <p>Monday - Friday: 9:00 AM - 7:00 PM IST</p>
+                                <p>Saturday: 10:00 AM - 4:00 PM IST</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Send us a Message</h3>
+                        <form class="space-y-6" id="contact-form">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                    <input 
+                                        type="text" 
+                                        name="firstName"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                                        placeholder="Your first name"
+                                        required
+                                    >
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                    <input 
+                                        type="text" 
+                                        name="lastName"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                                        placeholder="Your last name"
+                                        required
+                                    >
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input 
+                                    type="email" 
+                                    name="email"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                                    placeholder="your.email@company.com"
+                                    required
+                                >
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                                <input 
+                                    type="text" 
+                                    name="company"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                                    placeholder="Your company name"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea 
+                                    rows="4"
+                                    name="message"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                                    placeholder="Tell us about your project requirements..."
+                                    required
+                                ></textarea>
+                            </div>
+                            
+                            <button 
+                                type="submit"
+                                class="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-colors duration-200"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="text-center">
+                    <div class="flex items-center justify-center space-x-3 mb-4">
+                        <div class="bg-gradient-to-br from-blue-600 to-teal-600 p-2 rounded-lg">
+                            <i data-lucide="cloud" class="h-5 w-5 text-white"></i>
+                        </div>
+                        <span class="text-lg font-semibold">CloudTech Solutions</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Transforming businesses through innovative cloud architecture and DevOps solutions
+                    </p>
+                    <div class="flex items-center justify-center space-x-6 text-sm text-gray-400">
+                        <span>© 2025 CloudTech Solutions Pvt. Ltd.</span>
+                        <span>•</span>
+                        <span>Bangalore, India</span>
+                        <span>•</span>
+                        <span>info@cloudtechsolutions.in</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
