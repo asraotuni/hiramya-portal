@@ -86,7 +86,7 @@ function App() {
     },
     {
       category: 'Security Tools',
-      items: ['HashiCorp Vault', 'AWS IAM', 'OWASP ZAP', 'SonarQube']
+      items: [ 'AWS IAM', 'Okta', 'SonarQube']
     }
   ];
 
