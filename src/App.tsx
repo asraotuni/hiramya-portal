@@ -92,7 +92,7 @@ function App() {
         return (
           <div className="space-y-8">
             <div className="text-center">
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">About CloudTech Solutions</h2>
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">About HiramyaTech</h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 Based in the vibrant tech hub of Bangalore, we are a leading cloud platform architecture and DevOps engineering company 
                 dedicated to transforming businesses through innovative cloud solutions.
@@ -252,7 +252,7 @@ function App() {
                     <div>
                       <h4 className="font-semibold text-gray-800">Office Address</h4>
                       <p className="text-gray-600">
-                        CloudTech Solutions Pvt. Ltd.<br />
+                        HiramyaTech OPC Pvt. Ltd.<br />
                         #42, 3rd Floor, Brigade Road<br />
                         Bangalore, Karnataka 560025<br />
                         India
@@ -370,7 +370,7 @@ function App() {
                 <Cloud className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">CloudTech Solutions</h1>
+                <h1 className="text-xl font-bold text-gray-900">HiramyaTech</h1>
                 <p className="text-xs text-gray-500">Cloud Architecture & DevOps Excellence</p>
               </div>
             </div>
@@ -430,17 +430,17 @@ function App() {
               <div className="bg-gradient-to-br from-blue-600 to-teal-600 p-2 rounded-lg">
                 <Cloud className="h-5 w-5 text-white" />
               </div>
-              <span className="text-lg font-semibold">CloudTech Solutions</span>
+              <span className="text-lg font-semibold">HiramyaTech</span>
             </div>
             <p className="text-gray-400 mb-4">
               Transforming businesses through innovative cloud architecture and DevOps solutions
             </p>
             <div className="flex items-center justify-center space-x-6 text-sm text-gray-400">
-              <span>© 2025 CloudTech Solutions Pvt. Ltd.</span>
+              <span>© 2025 HiramyaTech OPC Pvt. Ltd.</span>
               <span>•</span>
               <span>Bangalore, India</span>
               <span>•</span>
-              <span>info@cloudtechsolutions.in</span>
+              <span>info@hiramyatech.com</span>
             </div>
           </div>
         </div>
