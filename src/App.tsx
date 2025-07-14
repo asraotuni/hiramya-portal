@@ -104,7 +104,7 @@ function App() {
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h3>
                 <p className="text-gray-600 leading-relaxed mb-6">
                   We empower organizations to leverage the full potential of cloud computing through expert architecture design, self-service platforms,
-                  robust DevOps practices, and cutting-edge engineering solutions. Our team of certified professionals brings 
+                  robust DevOps practices, and cutting-edge engineering solutions. Our team of  professionals brings 
                   years of experience in building scalable, secure, and cost-effective cloud infrastructures.
                 </p>
                 <div className="flex items-center space-x-4">
