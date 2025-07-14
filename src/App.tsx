@@ -81,10 +81,6 @@ function App() {
       items: ['Prometheus', 'Grafana', 'ELK Stack', 'Datadog', 'New Relic']
     },
     {
-      category: 'Databases',
-      items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Amazon RDS']
-    },
-    {
       category: 'Security Tools',
       items: [ 'AWS IAM', 'Okta', 'SonarQube']
     }
