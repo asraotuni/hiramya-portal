@@ -132,7 +132,7 @@ function App() {
                     <Zap className="h-5 w-5 text-blue-600 mt-1" />
                     <div>
                       <h4 className="font-medium text-gray-800">Proven Track Record</h4>
-                      <p className="text-gray-600 text-sm">100+ successful cloud migrations and implementations</p>
+                      <p className="text-gray-600 text-sm">Provisoned 100s of self-service IaC platforms for microservices, and devops pipelines</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
