@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function sendEmailViaEmailJS(firstName, lastName, email, company, message) {
         // You'll need to sign up at https://www.emailjs.com/ and get your keys
         const serviceID = 'service_02phu3v'; // Replace with your EmailJS service ID
-        const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+        const templateID = 'template_nbpbivz'; // Replace with your EmailJS template ID
         const userID = 'qPhAqGf11kpfdBK9N'; // Replace with your EmailJS user ID
         
         const templateParams = {
