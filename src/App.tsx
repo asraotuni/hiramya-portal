@@ -78,7 +78,7 @@ function App() {
     },
     {
       category: 'Monitoring & Logging',
-      items: ['Prometheus', 'Grafana', 'ELK Stack', 'Datadog', 'New Relic']
+      items: ['Prometheus', 'Grafana', 'ELK Stack', 'Datadog' ]
     },
     {
       category: 'Security Tools',
