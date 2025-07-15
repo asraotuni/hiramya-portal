@@ -22,6 +22,78 @@ import {
 
 function App() {
   const [activeTab, setActiveTab] = useState('about');
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: '' });
+  const [captchaError, setCaptchaError] = useState('');
+
+  // Generate new CAPTCHA
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    setCaptcha({ num1, num2, answer: '' });
+    setCaptchaError('');
+  };
+
+  // Initialize CAPTCHA when contact tab is opened
+  React.useEffect(() => {
+    if (activeTab === 'contact') {
+      generateCaptcha();
+    }
+  }, [activeTab]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    if (name === 'captchaAnswer') {
+      setCaptcha(prev => ({ ...prev, answer: value }));
+      setCaptchaError('');
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate CAPTCHA
+    const correctAnswer = captcha.num1 + captcha.num2;
+    if (parseInt(captcha.answer) !== correctAnswer) {
+      setCaptchaError('Incorrect answer. Please try again.');
+      generateCaptcha();
+      return;
+    }
+
+    // Basic form validation
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    // If validation passes, show success message
+    alert('Thank you for your message! We will get back to you soon.');
+    
+    // Reset form
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      company: '',
+      message: ''
+    });
+    generateCaptcha();
+  };
 
   const tabs = [
     { id: 'about', label: 'About Us', icon: Users },
@@ -295,22 +367,30 @@ function App() {
               
               <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send us a Message</h3>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
                       <input 
                         type="text" 
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                         placeholder="Your first name"
+                        required
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
                       <input 
                         type="text" 
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                         placeholder="Your last name"
+                        required
                       />
                     </div>
                   </div>
@@ -319,8 +399,12 @@ function App() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                     <input 
                       type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                       placeholder="your.email@company.com"
+                      required
                     />
                   </div>
                   
@@ -328,6 +412,9 @@ function App() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
                     <input 
                       type="text" 
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                       placeholder="Your company name"
                     />
@@ -337,9 +424,41 @@ function App() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                     <textarea 
                       rows={4}
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                       placeholder="Tell us about your project requirements..."
+                      required
                     />
+                  </div>
+                  
+                  {/* CAPTCHA */}
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Security Check: What is {captcha.num1} + {captcha.num2}?
+                    </label>
+                    <div className="flex items-center space-x-3">
+                      <input 
+                        type="number" 
+                        name="captchaAnswer"
+                        value={captcha.answer}
+                        onChange={handleInputChange}
+                        className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                        placeholder="Answer"
+                        required
+                      />
+                      <button
+                        type="button"
+                        onClick={generateCaptcha}
+                        className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                      >
+                        New Question
+                      </button>
+                    </div>
+                    {captchaError && (
+                      <p className="text-red-600 text-sm mt-2">{captchaError}</p>
+                    )}
                   </div>
                   
                   <button 
