@@ -29,14 +29,17 @@ function App() {
     company: '',
     message: ''
   });
-  const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: '' });
+  const [captcha, setCaptcha] = useState({ code: '', answer: '' });
   const [captchaError, setCaptchaError] = useState('');
 
-  // Generate new CAPTCHA
+  // Generate random string CAPTCHA
   const generateCaptcha = () => {
-    const num1 = Math.floor(Math.random() * 10) + 1;
-    const num2 = Math.floor(Math.random() * 10) + 1;
-    setCaptcha({ num1, num2, answer: '' });
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789';
+    let code = '';
+    for (let i = 0; i < 6; i++) {
+      code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    setCaptcha({ code, answer: '' });
     setCaptchaError('');
   };
 
@@ -61,9 +64,8 @@ function App() {
     e.preventDefault();
     
     // Validate CAPTCHA
-    const correctAnswer = captcha.num1 + captcha.num2;
-    if (parseInt(captcha.answer) !== correctAnswer) {
-      setCaptchaError('Incorrect answer. Please try again.');
+    if (captcha.answer !== captcha.code) {
+      setCaptchaError('Incorrect code. Please try again.');
       generateCaptcha();
       return;
     }
@@ -436,24 +438,35 @@ function App() {
                   {/* CAPTCHA */}
                   <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Security Check: What is {captcha.num1} + {captcha.num2}?
+                      Security Check: Enter the code shown below
                     </label>
+                    <div className="mb-3">
+                      <div className="bg-white border-2 border-gray-300 rounded-lg p-3 font-mono text-xl font-bold text-gray-800 tracking-wider text-center select-none" 
+                           style={{ 
+                             background: 'linear-gradient(45deg, #f8f9fa 25%, transparent 25%), linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f8f9fa 75%), linear-gradient(-45deg, transparent 75%, #f8f9fa 75%)',
+                             backgroundSize: '20px 20px',
+                             backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
+                           }}>
+                        {captcha.code}
+                      </div>
+                    </div>
                     <div className="flex items-center space-x-3">
                       <input 
-                        type="number" 
+                        type="text" 
                         name="captchaAnswer"
                         value={captcha.answer}
                         onChange={handleInputChange}
-                        className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
-                        placeholder="Answer"
+                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                        placeholder="Enter the code above"
+                        maxLength={6}
                         required
                       />
                       <button
                         type="button"
                         onClick={generateCaptcha}
-                        className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                        className="text-blue-600 hover:text-blue-700 text-sm font-medium whitespace-nowrap"
                       >
-                        New Question
+                        New Code
                       </button>
                     </div>
                     {captchaError && (
