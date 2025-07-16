@@ -341,8 +341,7 @@ function App() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800">Phone</h4>
-                      <p className="text-gray-600">+91 80 4567 8901</p>
-                      <p className="text-gray-600">+91 80 4567 8902</p>
+                      <p className="text-gray-600">+91-91770 61000</p>
                     </div>
                   </div>
                   
@@ -353,7 +352,6 @@ function App() {
                     <div>
                       <h4 className="font-semibold text-gray-800">Email</h4>
                       <p className="text-gray-600">info@hiramyatech.com</p>
-                      <p className="text-gray-600">sales@hiramyatech.com</p>
                     </div>
                   </div>
                 </div>
