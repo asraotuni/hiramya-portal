@@ -326,9 +326,10 @@ function App() {
                     <div>
                       <h4 className="font-semibold text-gray-800">Office Address</h4>
                       <p className="text-gray-600">
-                        HiramyaTech OPC Pvt. Ltd.<br />
-                        #42, 3rd Floor, Brigade Road<br />
-                        Bangalore, Karnataka 560025<br />
+                        HiramyaTech OPC Pvt Ltd,<br />
+                        B-102, Habitat Splendour,<br />
+                        Brookefield, Kundalahalli,<br />
+                        Bangalore 560037<br />
                         India
                       </p>
                     </div>
