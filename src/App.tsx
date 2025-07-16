@@ -359,8 +359,8 @@ function App() {
                 <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-6 rounded-xl">
                   <h4 className="font-semibold text-gray-800 mb-3">Business Hours</h4>
                   <div className="space-y-2 text-gray-600">
-                    <p>Monday - Friday: 9:00 AM - 7:00 PM IST</p>
-                    <p>Saturday: 10:00 AM - 4:00 PM IST</p>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+                    <p>Saturday: Closed</p>
                     <p>Sunday: Closed</p>
                   </div>
                 </div>
